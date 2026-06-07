@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 1: Semantic Forms & Clickable Maps</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 40px; background-color: #f4f6f9; color: #333; }
+        .container { max-width: 800px; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        h2 { color: #2c3e50; border-bottom: 2px solid #ecf0f1; padding-bottom: 10px; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input[type="text"], input[type="email"], select { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        button { background: #3498db; color: white; border: none; padding: 12px 20px; border-radius: 4px; cursor: pointer; font-size: 16px; }
+        button:hover { background: #2980b9; }
+        .map-section { margin-top: 30px; text-align: center; }
+        .map-container { position: relative; display: inline-block; border: 3px solid #2c3e50; border-radius: 6px; overflow: hidden; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Client-Side Registry Portal (HTML5 Forms)</h2>
+    <form action="../03_Server_Side_Scripting/processor.php" method="POST" id="registrationForm">
+        <div class="form-group">
+            <label for="username">Developer Alias:</label>
+            <input type="text" id="username" name="username" required placeholder="e.g., Turing99">
+        </div>
+        <div class="form-group">
+            <label for="email">Academic Email Node:</label>
+            <input type="email" id="email" name="email" required placeholder="name@university.edu">
+        </div>
+        <div class="form-group">
+            <label for="track">Primary Architectural Focus:</label>
+            <select id="track" name="track">
+                <option value="systems">Systems Engineering</option>
+                <option value="data">Data Science & Analytics</option>
+                <option value="cyber">Cybersecurity Frameworks</option>
+            </select>
+        </div>
+        <button type="submit">Transmit Data Packet (CGI Push)</button>
+    </form>
+
+    <div class="map-section">
+        <h2>Interactive Server-Room Hotspot (Clickable Image Map)</h2>
+        <p>Click on the left terminal stack (blue zone) or right terminal stack (red zone) to audit hardware segments:</p>
+        
+        <div class="map-container">
+            <img src="https://picsum.photos/id/60/600/300" usemap="#serverroom" alt="Server Room Infrastructure Visualization">
+            
+            <map name="serverroom">
+                <area shape="rect" coords="0,0,300,300" alt="Terminal Alpha" href="#" onclick="alert('Auditing Terminal Alpha Node: Status OPTIMAL. Latency: 4ms.'); return false;">
+                <area shape="rect" coords="301,0,600,300" alt="Terminal Beta" href="#" onclick="alert('Auditing Terminal Beta Node: Status WARNING. Thermal Threshold high.'); return false;">
+            </map>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
